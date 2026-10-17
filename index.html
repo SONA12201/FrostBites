@@ -1,0 +1,1635 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frostbite Logistics provides reliable cold-chain storage, refrigerated transportation and distribution solutions.">
+    <title>Frostbite | Cold Chain Logistics</title>
+
+    <style>
+        :root {
+            --navy: #09243a;
+            --blue: #087fbd;
+            --cyan: #40d6e9;
+            --ice: #eaf8fc;
+            --white: #ffffff;
+            --text: #536678;
+            --light: #f5f9fc;
+            --border: #dce8ef;
+            --green: #159b79;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button, input, textarea, select {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1160px, 90%);
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,.97);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .brand img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .brand-name {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .brand-name span {
+            color: var(--blue);
+        }
+
+        .brand small {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-cta, .btn {
+            display: inline-block;
+            background: var(--blue);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 13px 21px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .nav-cta:hover, .btn:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--navy);
+        }
+
+        /* Hero */
+
+        .hero {
+            overflow: hidden;
+            position: relative;
+            background:
+                radial-gradient(circle at 85% 25%, rgba(64,214,233,.2), transparent 30%),
+                linear-gradient(125deg, #09243a 0%, #0c4163 65%, #087fbd 100%);
+            color: white;
+            padding: 100px 0 95px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--cyan);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 65px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--cyan);
+        }
+
+        .hero p {
+            max-width: 550px;
+            color: #d8eaf5;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn-light {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 1px solid rgba(255,255,255,.5);
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .btn-light:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 350px;
+            display: grid;
+            place-items: center;
+        }
+
+        .cold-card {
+            width: min(100%, 390px);
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,.25);
+            background: rgba(255,255,255,.09);
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 65px rgba(0,0,0,.15);
+        }
+
+        .snowflake {
+            font-size: 76px;
+            color: var(--cyan);
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .cold-card h3 {
+            text-align: center;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .cold-card > p {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .temperature-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            border-top: 1px solid rgba(255,255,255,.2);
+            padding-top: 16px;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .temperature-row strong {
+            color: var(--cyan);
+        }
+
+        /* Stats */
+
+        .stats {
+            position: relative;
+            margin-top: -1px;
+            background: var(--ice);
+            padding: 32px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 12px;
+        }
+
+        .stat h3 {
+            font-size: 30px;
+            color: var(--blue);
+            margin-bottom: 4px;
+        }
+
+        .stat p {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        /* General sections */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            color: var(--blue);
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+            margin: 12px 0 16px;
+        }
+
+        .section-heading p {
+            color: var(--text);
+        }
+
+        /* About */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-visual {
+            background: linear-gradient(145deg, #dff6fc, #f4faff);
+            border-radius: 16px;
+            padding: 38px;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .about-feature {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            box-shadow: 0 8px 25px rgba(9,36,58,.04);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: var(--ice);
+            display: grid;
+            place-items: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .about-feature p {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        .about-content h2 {
+            font-size: 37px;
+            line-height: 1.2;
+            margin: 12px 0 20px;
+        }
+
+        .about-content > p {
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .check-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin: 24px 0 30px;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Services */
+
+        .services-section {
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: .25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(9,36,58,.08);
+            border-color: #a6dfee;
+        }
+
+        .service-icon {
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--blue);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Industries */
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .industry-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .industry-card div {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .industry-card h3 {
+            margin-bottom: 9px;
+            font-size: 18px;
+        }
+
+        .industry-card p {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        /* Why Frostbite */
+
+        .why-section {
+            background: var(--navy);
+            color: white;
+        }
+
+        .why-section .section-heading p {
+            color: #c3d5e2;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 12px;
+            background: rgba(255,255,255,.04);
+        }
+
+        .why-card div {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: #c3d5e2;
+        }
+
+        /* Dashboard */
+
+        .dashboard-section {
+            background: var(--light);
+        }
+
+        .dashboard {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 28px;
+            box-shadow: 0 15px 40px rgba(9,36,58,.05);
+        }
+
+        .dashboard-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-top p {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        .demo-label {
+            display: inline-block;
+            background: #fff2d9;
+            color: #805500;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .kpi {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .kpi p {
+            color: var(--text);
+            font-size: 12px;
+        }
+
+        .kpi h3 {
+            font-size: 29px;
+            margin: 7px 0;
+        }
+
+        .kpi small {
+            color: var(--green);
+            font-size: 11px;
+        }
+
+        .chart-area {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 35px;
+        }
+
+        .chart-area h3 {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: 95px 1fr 38px;
+            align-items: center;
+            gap: 10px;
+            margin: 18px 0;
+            font-size: 12px;
+        }
+
+        .bar-track {
+            height: 12px;
+            background: #eaf0f5;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--blue), var(--cyan));
+            border-radius: 20px;
+        }
+
+        .status-list {
+            list-style: none;
+        }
+
+        .status-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        .status-list li span:last-child {
+            font-weight: 700;
+        }
+
+        .dashboard-note {
+            color: var(--text);
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        /* Contact */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 55px;
+        }
+
+        .contact-info h2 {
+            font-size: 36px;
+            line-height: 1.2;
+            margin: 12px 0 18px;
+        }
+
+        .contact-info > p {
+            color: var(--text);
+            margin-bottom: 28px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 23px;
+            align-items: flex-start;
+        }
+
+        .contact-item .feature-icon {
+            width: 44px;
+            height: 44px;
+        }
+
+        .contact-item p {
+            color: var(--text);
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-form {
+            padding: 32px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            box-shadow: 0 12px 35px rgba(9,36,58,.05);
+        }
+
+        .contact-form h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .contact-form > p {
+            color: var(--text);
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-bottom: 17px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d5e1e9;
+            border-radius: 6px;
+            outline: none;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(8,127,189,.1);
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #061a2b;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 35px;
+        }
+
+        .footer-brand p {
+            color: #b9ccda;
+            font-size: 14px;
+            margin-top: 17px;
+            max-width: 330px;
+        }
+
+        footer h3 {
+            font-size: 16px;
+            margin-bottom: 17px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            color: #b9ccda;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.12);
+            padding-top: 20px;
+            text-align: center;
+            color: #b9ccda;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 950px) {
+            .nav-links {
+                gap: 14px;
+                font-size: 13px;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .hero-grid, .about-grid, .contact-grid {
+                gap: 35px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .industry-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                min-height: 72px;
+            }
+
+            .brand img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .brand-name {
+                font-size: 21px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 22px 5%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 19px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero-grid, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .about-content h2 {
+                font-size: 30px;
+            }
+
+            .services-grid, .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-area {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard {
+                padding: 18px;
+            }
+
+            .kpi {
+                padding: 14px;
+            }
+
+            .kpi h3 {
+                font-size: 24px;
+            }
+
+            .bar-row {
+                grid-template-columns: 75px 1fr 30px;
+                gap: 7px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .contact-form {
+                padding: 22px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container navbar">
+
+            <a href="#home" class="brand" aria-label="Frostbite home">
+                <img src="logo.jpeg" alt="Frostbite Logistics Logo">
+                <div class="brand-name">
+                    FROST<span>BITE</span>
+                    <small>COLD CHAIN LOGISTICS</small>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">☰</button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="nav-cta">Get a Quote ↗</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HOME / HERO -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div>
+                    <span class="eyebrow">Reliable Cold Chain Solutions</span>
+
+                    <h1>
+                        Keeping Your Products
+                        <span>Fresh & Moving.</span>
+                    </h1>
+
+                    <p>
+                        From temperature-controlled storage to dependable
+                        transportation, Frostbite helps businesses protect
+                        product quality and keep their supply chains moving.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn">Explore Our Services →</a>
+                        <a href="#about" class="btn-light">Discover Frostbite</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="cold-card">
+                        <div class="snowflake">❄</div>
+                        <h3>Precision in Every Degree</h3>
+                        <p>Cold-chain solutions designed around your cargo.</p>
+
+                        <div class="temperature-row">
+                            <span>Frozen Cargo</span>
+                            <strong>Temperature Controlled</strong>
+                        </div>
+
+                        <div class="temperature-row">
+                            <span>Chilled Cargo</span>
+                            <strong>Monitored Handling</strong>
+                        </div>
+
+                        <div class="temperature-row">
+                            <span>Distribution</span>
+                            <strong>Reliable Movement</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <div class="stats">
+            <div class="container stats-grid">
+
+                <div class="stat">
+                    <h3>24/7</h3>
+                    <p>Supply Chain Focus</p>
+                </div>
+
+                <div class="stat">
+                    <h3>3PL</h3>
+                    <p>Logistics Solutions</p>
+                </div>
+
+                <div class="stat">
+                    <h3>360°</h3>
+                    <p>Service Approach</p>
+                </div>
+
+                <div class="stat">
+                    <h3>1</h3>
+                    <p>Connected Logistics Partner</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="container about-grid">
+
+                <div class="about-visual">
+
+                    <div class="about-feature">
+                        <div class="feature-icon">❄️</div>
+                        <div>
+                            <h3>Temperature-Conscious Handling</h3>
+                            <p>Protecting product quality throughout the journey.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature">
+                        <div class="feature-icon">📦</div>
+                        <div>
+                            <h3>Smarter Storage</h3>
+                            <p>Organised inventory and efficient warehouse operations.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature">
+                        <div class="feature-icon">🚚</div>
+                        <div>
+                            <h3>Dependable Distribution</h3>
+                            <p>Connecting storage facilities with business destinations.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="about-content">
+                    <span class="section-label">About Frostbite</span>
+
+                    <h2>Moving Products. Protecting Quality.</h2>
+
+                    <p>
+                        Frostbite is a logistics website concept focused on
+                        cold-chain storage, transportation and distribution.
+                        Our goal is to demonstrate how careful handling,
+                        efficient operations and supply chain visibility can
+                        support businesses that depend on product freshness.
+                    </p>
+
+                    <p>
+                        We aim to serve food producers, retailers, healthcare
+                        distributors and growing businesses that need
+                        dependable logistics support.
+                    </p>
+
+                    <ul class="check-list">
+                        <li>Cold-chain focused logistics solutions</li>
+                        <li>Organised storage and inventory management</li>
+                        <li>Transportation and distribution coordination</li>
+                        <li>Customer-focused service and communication</li>
+                    </ul>
+
+                    <a href="#contact" class="btn">Discuss Your Requirements →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services-section" id="services">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Our Services</span>
+                    <h2>Logistics That Fits Your Business</h2>
+                    <p>
+                        Explore the services designed to support storage,
+                        movement and delivery across your supply chain.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <div class="service-icon">🏢</div>
+                        <h3>Cold Storage</h3>
+                        <p>
+                            Temperature-managed storage solutions for products
+                            that require specific environmental conditions.
+                        </p>
+                        <a href="#contact" class="service-link">Request a Quote →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">🚛</div>
+                        <h3>Refrigerated Transport</h3>
+                        <p>
+                            Temperature-conscious transportation to help
+                            protect cargo quality during transit.
+                        </p>
+                        <a href="#contact" class="service-link">Request a Quote →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">📦</div>
+                        <h3>Warehousing & Inventory</h3>
+                        <p>
+                            Storage coordination, inventory organisation
+                            and efficient warehouse handling.
+                        </p>
+                        <a href="#contact" class="service-link">Request a Quote →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">🔗</div>
+                        <h3>Supply Chain Distribution</h3>
+                        <p>
+                            Coordinated product movement between warehouses,
+                            distribution points and business destinations.
+                        </p>
+                        <a href="#contact" class="service-link">Request a Quote →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">🛒</div>
+                        <h3>Retail & E-commerce</h3>
+                        <p>
+                            Fulfilment and distribution support for retailers,
+                            online sellers and growing consumer brands.
+                        </p>
+                        <a href="#contact" class="service-link">Request a Quote →</a>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Logistics Coordination</h3>
+                        <p>
+                            Operational planning, shipment coordination and
+                            visibility to support better logistics decisions.
+                        </p>
+                        <a href="#contact" class="service-link">Request a Quote →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INDUSTRIES -->
+        <section id="industries">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Industries We Serve</span>
+                    <h2>Supporting Essential Supply Chains</h2>
+                    <p>
+                        Different products have different storage, handling
+                        and transportation needs. Logistics should reflect that.
+                    </p>
+                </div>
+
+                <div class="industry-grid">
+
+                    <article class="industry-card">
+                        <div>🥦</div>
+                        <h3>Food & Beverages</h3>
+                        <p>Fresh produce, frozen foods, dairy and beverages.</p>
+                    </article>
+
+                    <article class="industry-card">
+                        <div>💊</div>
+                        <h3>Healthcare</h3>
+                        <p>Temperature-sensitive healthcare products requiring appropriate controls.</p>
+                    </article>
+
+                    <article class="industry-card">
+                        <div>🏬</div>
+                        <h3>Retail & FMCG</h3>
+                        <p>Stock replenishment and distribution for consumer goods.</p>
+                    </article>
+
+                    <article class="industry-card">
+                        <div>🛍️</div>
+                        <h3>E-commerce</h3>
+                        <p>Storage and fulfilment support for online businesses.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY FROSTBITE -->
+        <section class="why-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Why Frostbite</span>
+                    <h2>A Better Approach to Logistics</h2>
+                    <p>
+                        Good logistics depends on more than moving goods.
+                        It requires planning, visibility and consistent handling.
+                    </p>
+                </div>
+
+                <div class="why-grid">
+
+                    <article class="why-card">
+                        <div>🌡️</div>
+                        <h3>Quality-Focused Handling</h3>
+                        <p>
+                            Appropriate storage and handling procedures help
+                            maintain the condition of temperature-sensitive cargo.
+                        </p>
+                    </article>
+
+                    <article class="why-card">
+                        <div>⚙️</div>
+                        <h3>Operational Efficiency</h3>
+                        <p>
+                            Better coordination of inventory, storage and
+                            transportation can reduce avoidable operational waste.
+                        </p>
+                    </article>
+
+                    <article class="why-card">
+                        <div>📍</div>
+                        <h3>Supply Chain Visibility</h3>
+                        <p>
+                            Shipment updates and clear communication help
+                            businesses understand the movement of their goods.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section class="dashboard-section" id="dashboard">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Operations Dashboard</span>
+                    <h2>Logistics at a Glance</h2>
+                    <p>
+                        A sample dashboard illustrating how logistics KPIs
+                        can help monitor delivery performance and order status.
+                    </p>
+                </div>
+
+                <div class="dashboard">
+
+                    <div class="dashboard-top">
+                        <div>
+                            <h3>Frostbite Operations Overview</h3>
+                            <p>Illustrative performance data</p>
+                        </div>
+                        <span class="demo-label">DEMO DATA</span>
+                    </div>
+
+                    <div class="kpi-grid">
+
+                        <div class="kpi">
+                            <p>Total Orders</p>
+                            <h3>1,250</h3>
+                            <small>All recorded orders</small>
+                        </div>
+
+                        <div class="kpi">
+                            <p>Delivered</p>
+                            <h3>849</h3>
+                            <small>68% of total orders</small>
+                        </div>
+
+                        <div class="kpi">
+                            <p>In Transit</p>
+                            <h3>351</h3>
+                            <small>Awaiting delivery</small>
+                        </div>
+
+                        <div class="kpi">
+                            <p>Delayed</p>
+                            <h3>50</h3>
+                            <small style="color:#c47713">Requires attention</small>
+                        </div>
+
+                    </div>
+
+                    <div class="chart-area">
+
+                        <div>
+                            <h3>Order Status Distribution</h3>
+
+                            <div class="bar-row">
+                                <span>Delivered</span>
+                                <div class="bar-track">
+                                    <div class="bar" style="width:67.92%"></div>
+                                </div>
+                                <strong>849</strong>
+                            </div>
+
+                            <div class="bar-row">
+                                <span>In Transit</span>
+                                <div class="bar-track">
+                                    <div class="bar" style="width:28.08%"></div>
+                                </div>
+                                <strong>351</strong>
+                            </div>
+
+                            <div class="bar-row">
+                                <span>Delayed</span>
+                                <div class="bar-track">
+                                    <div class="bar" style="width:4%"></div>
+                                </div>
+                                <strong>50</strong>
+                            </div>
+
+                            <h3 style="margin-top:35px">Service Performance</h3>
+
+                            <div class="bar-row">
+                                <span>On-Time Rate</span>
+                                <div class="bar-track">
+                                    <div class="bar" style="width:86.4%"></div>
+                                </div>
+                                <strong>86.4%</strong>
+                            </div>
+
+                            <div class="bar-row">
+                                <span>Satisfaction</span>
+                                <div class="bar-track">
+                                    <div class="bar" style="width:82%"></div>
+                                </div>
+                                <strong>4.1/5</strong>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Operational Summary</h3>
+
+                            <ul class="status-list">
+                                <li>
+                                    <span>Total Orders</span>
+                                    <span>1,250</span>
+                                </li>
+                                <li>
+                                    <span>Completed Orders</span>
+                                    <span>849</span>
+                                </li>
+                                <li>
+                                    <span>Orders in Transit</span>
+                                    <span>351</span>
+                                </li>
+                                <li>
+                                    <span>Delayed Orders</span>
+                                    <span>50</span>
+                                </li>
+                                <li>
+                                    <span>On-Time Delivery</span>
+                                    <span>86.4%</span>
+                                </li>
+                                <li>
+                                    <span>Customer Satisfaction</span>
+                                    <span>4.1 / 5</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <p class="dashboard-note">
+                        Note: All figures are sample values for website demonstration.
+                        They are not live tracking data or verified Frostbite business results.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container contact-grid">
+
+                <div class="contact-info">
+                    <span class="section-label">Contact Us</span>
+
+                    <h2>Let's Build a Better Supply Chain.</h2>
+
+                    <p>
+                        Tell us about your storage, transportation or
+                        distribution requirements. Send an enquiry to start
+                        a conversation about a suitable logistics solution.
+                    </p>
+
+                    <div class="contact-item">
+                        <div class="feature-icon">✉️</div>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>
+                                <a href="mailto:tisha1221@gmail.com">
+                                    tisha1221@gmail.com
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="feature-icon">📞</div>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>
+                                <a href="tel:+919273942794">
+                                    +91 92739 42794
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="feature-icon">📍</div>
+                        <div>
+                            <h3>Service Area</h3>
+                            <p>India — service coverage to be confirmed.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <form class="contact-form" id="enquiryForm">
+                    <h3>Request a Logistics Enquiry</h3>
+                    <p>Fill in the details below to prepare your enquiry email.</p>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name"
+                                   placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company"
+                                   placeholder="Your company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email"
+                                   placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone"
+                                   placeholder="Your contact number">
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="service">Service Required *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option>Cold Storage</option>
+                                <option>Refrigerated Transportation</option>
+                                <option>Warehousing & Inventory</option>
+                                <option>Supply Chain Distribution</option>
+                                <option>Retail & E-commerce</option>
+                                <option>Other Logistics Services</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="message">Tell Us About Your Requirements *</label>
+                            <textarea id="message" name="message"
+                                      placeholder="Cargo type, quantity, temperature requirements, destination..."
+                                      required></textarea>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn">Prepare Enquiry Email →</button>
+
+                    <p id="formMessage" role="status"
+                       style="margin-top:12px; margin-bottom:0;"></p>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a href="#home" class="brand">
+                        <img src="logo.jpeg" alt="Frostbite Logo">
+                        <div class="brand-name" style="color:white">
+                            FROST<span>BITE</span>
+                            <small style="color:#b9ccda">COLD CHAIN LOGISTICS</small>
+                        </div>
+                    </a>
+
+                    <p>
+                        A cold-chain logistics website concept focused on
+                        product quality, efficient operations and dependable
+                        supply chain solutions.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Frostbite</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Get in Touch</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="mailto:tisha1221@gmail.com">
+                                tisha1221@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+919273942794">
+                                +91 92739 42794
+                            </a>
+                        </li>
+                        <li><a href="#contact">Send an Enquiry</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                © <span id="year"></span> Frostbite Logistics.
+                Website demonstration project. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("active");
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Close the mobile menu when a navigation link is selected
+        document.querySelectorAll("#navLinks a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // Automatically update the copyright year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        // Prepare an enquiry email using the visitor's default email application
+        document.getElementById("enquiryForm").addEventListener("submit",
+            function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value.trim();
+                const company = document.getElementById("company").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const service = document.getElementById("service").value;
+                const message = document.getElementById("message").value.trim();
+                const status = document.getElementById("formMessage");
+
+                const subject = "Frostbite Logistics Enquiry - " + service;
+
+                const body =
+                    "New logistics enquiry\n\n" +
+                    "Name: " + name + "\n" +
+                    "Company: " + (company || "Not provided") + "\n" +
+                    "Email: " + email + "\n" +
+                    "Phone: " + (phone || "Not provided") + "\n" +
+                    "Service: " + service + "\n\n" +
+                    "Requirements:\n" + message;
+
+                const mailto =
+                    "mailto:tisha1221@gmail.com" +
+                    "?subject=" + encodeURIComponent(subject) +
+                    "&body=" + encodeURIComponent(body);
+
+                status.textContent =
+                    "Opening your email application. Please review and send the email.";
+
+                window.location.href = mailto;
+            });
+    </script>
+
+</body>
+</html>
